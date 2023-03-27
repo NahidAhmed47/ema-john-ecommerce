@@ -13,15 +13,17 @@ const Shop = () => {
     },[])
     return (
         <>
-            <h3 className="text-base font-semibold pl-5 pt-5">Products({products.length})</h3>
             <div className="grid grid-cols-5 min-h-[100vh]">
                 <div className="col-span-4 w-full grid grid-cols-2 sm:grid-cols-4 gap-6 sm:px-5 py-3">
                     {
                         products.map(product => <Products key={product.id} product={product}></Products>)
                     }
                 </div>
-                <div className="bg-[#FF9900] w-full">
-
+                <div className="bg-[#FFE0B3] w-full ">
+                    <h1 className="text-xl font-semibold text-center mt-5">Order summary</h1>
+                    <div>
+                        <p className="mt-4 text-base font-semibold text-center">Selected Items: </p>
+                    </div>
                 </div>
             </div>
         </>

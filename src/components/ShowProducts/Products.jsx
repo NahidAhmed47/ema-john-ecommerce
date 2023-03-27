@@ -13,7 +13,7 @@ const Products = (props) => {
                 <p>Rating: {rating}</p>
                 <p>Stock Status: {stock}</p>
             </div>
-            <div className="h-10 flex items-center justify-center bg-[#FFE0B3]">
+            <div className="h-10 flex items-center justify-center bg-[#FFE0B3] cursor-pointer hover:bg-[#ff9979]">
                 <p>Add to Cart</p>
             </div>
         </div>
