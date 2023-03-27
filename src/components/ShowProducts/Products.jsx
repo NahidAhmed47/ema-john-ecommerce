@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Products = (props) => {
-    console.log(props.product);
     const {img, name, price, rating, ratingCount, seller, shipping, stock} = props.product;
     return (
         <div className="p-1 border-2 rounded-md  flex flex-col justify-between">
@@ -13,7 +12,7 @@ const Products = (props) => {
                 <p>Rating: {rating}</p>
                 <p>Stock Status: {stock}</p>
             </div>
-            <div className="h-10 flex items-center justify-center bg-[#FFE0B3] cursor-pointer hover:bg-[#ff9979]">
+            <div onClick={() => props.handleCart(props.product)} className="h-10 flex items-center justify-center bg-[#FFE0B3] cursor-pointer hover:bg-[#ff9979]">
                 <p>Add to Cart</p>
             </div>
         </div>
