@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import OrderCart from '../orderCart/OrderCart';
 import Products from '../ShowProducts/Products';
 
 const Shop = () => {
@@ -24,11 +25,8 @@ const Shop = () => {
                         products.map(product => <Products key={product.id} product={product} handleCart={handleCart}></Products>)
                     }
                 </div>
-                <div className="bg-[#FFE0B3] w-full ">
-                    <h1 className="text-xl font-semibold text-center mt-5">Order summary</h1>
-                    <div>
-                        <p className="mt-4 text-base font-semibold text-center">Selected Items: {cart.length}</p>
-                    </div>
+                <div className="w-full bg-[#FFE0B3] ">
+                    <OrderCart cart={cart}></OrderCart>
                 </div>
             </div>
         </>
