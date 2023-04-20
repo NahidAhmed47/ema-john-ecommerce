@@ -12,6 +12,7 @@ import Inventory from './components/Inventory/Inventory';
 import cartProductsLoader from './loaders/cartProductsLoader';
 import Login from './components/singin&up/Login';
 import SingUp from './components/singin&up/SingUp';
+import AuthProviders from './providers/AuthProviders';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthProviders>
+       <RouterProvider router={router}></RouterProvider>
+    </AuthProviders>
   </React.StrictMode>,
 )

@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../providers/AuthProviders';
+import toast from 'react-hot-toast';
 
 const SingUp = () => {
     const [error, setError] = useState('');
+    const {createUserWithEmail} = useContext(UserContext);
     const getFormInfo = (e)=>{
         e.preventDefault()
+        setError('')
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
@@ -19,7 +23,16 @@ const SingUp = () => {
             setError('Password should have minimum 6 characters or longer!')
             return
         }
+        createUserWithEmail(email, password)
+        .then(result =>{
+            const user = result.user;
+            toast.success('SignUp successful!')
+        })
+        .catch(error =>{
+            setError(error.message);
+        })
         setError('')
+        e.target.reset()
     }
 
     return (
