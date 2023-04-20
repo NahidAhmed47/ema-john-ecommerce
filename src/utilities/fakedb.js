@@ -34,6 +34,7 @@ const getShoppingCart = () => {
 
 const deleteShoppingCart = () => {
     localStorage.removeItem('shopping-cart');
+    location.reload()
 }
 
 export {

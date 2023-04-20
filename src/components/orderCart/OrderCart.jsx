@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { deleteShoppingCart } from '../../utilities/fakedb';
 
 const OrderCart = ({cart}) => {
     let totalPrice = 0;
@@ -19,6 +21,10 @@ const OrderCart = ({cart}) => {
                 <p>Shipping Charge: ${totalShipping}</p>
                 <p>Tax: ${tax.toFixed(2)}</p>
                 <p className="font-bold">Payable Amount: ${(totalPrice + totalShipping + tax).toFixed(2)}</p>
+            </div>
+            <div className='flex flex-col w-full gap-2 mt-4'>
+                 <button onClick={deleteShoppingCart} className='w-full py-1 bg-red-500 text-white font-semibold font-mono text-base rounded'>Clear all</button>
+                 <Link to='/checkout'><button className='w-full py-1 bg-[#FF9900] text-white font-semibold font-mono text-base rounded'>Checkout order</button></Link>
             </div>
         </div>
     );

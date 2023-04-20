@@ -13,6 +13,8 @@ import cartProductsLoader from './loaders/cartProductsLoader';
 import Login from './components/singin&up/Login';
 import SingUp from './components/singin&up/SingUp';
 import AuthProviders from './providers/AuthProviders';
+import PrivateRoute from './PrivateRoutes/PrivateRoute';
+import CheckoutOrder from './components/CheckOutOrder/CheckoutOrder';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +45,10 @@ const router = createBrowserRouter([
       {
         path:'singup',
         element:<SingUp></SingUp>
+      },
+      {
+        path:'checkout',
+        element:<PrivateRoute><CheckoutOrder></CheckoutOrder></PrivateRoute>
       }
     ]
   }
