@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.input-field{
+    @apply text-base border border-black rounded px-2 py-1
+}

@@ -51,7 +51,9 @@ const Shop = () => {
                     }
                 </div>
                 <div className="w-full bg-[#FFE0B3] ">
-                    <OrderCart cart={cart}></OrderCart>
+                    <div className='w-full sticky top-0'>
+                         <OrderCart cart={cart}></OrderCart>
+                    </div>
                 </div>
             </div>
         </>
